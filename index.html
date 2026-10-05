@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>futuro.tech Design Studio — Sites internet & supports d'impression</title>
+<meta name="description" content="Sites vitrine, boutiques en ligne, logos et supports imprimés. Promo -35 % sur les sites internet.">
+<style>
+:root{
+  --bg:#f6f8f4;--surface:#ffffff;--ink:#0b1a22;--muted:#4a5a62;--line:#dbe3dc;
+  --lime:#b4ee12;--lime-ink:#0b1a22;--accent-text:#4f7a00;--navy:#0b1a22;--on-navy:#ffffff;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+  --font:"Poppins","Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0b1a22;--surface:#12262f;--ink:#f2f7ee;--muted:#a7b8bf;--line:#223a45;--accent-text:#b4ee12;}}
+:root[data-theme="dark"]{--bg:#0b1a22;--surface:#12262f;--ink:#f2f7ee;--muted:#a7b8bf;--line:#223a45;--accent-text:#b4ee12;}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.55}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--lime);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--navy);color:var(--on-navy)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.25rem;text-decoration:none;letter-spacing:-.02em}
+.logo .dot{width:30px;height:30px;border:2px solid #4b6470;border-radius:50%;display:grid;place-items:center}
+.logo .dot i{width:12px;height:12px;border-radius:50%;background:var(--lime)}
+.logo b{color:var(--lime)}
+.nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
+.nav ul a{text-decoration:none;font-size:.95rem;opacity:.9;padding:10px 4px}
+.nav ul a:hover{color:var(--lime)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 24px;border-radius:999px;background:var(--lime);color:var(--lime-ink);font-weight:600;text-decoration:none;border:2px solid var(--lime);transition:transform .2s ease,box-shadow .2s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(180,238,18,.35)}
+.btn.ghost{background:transparent;color:inherit;border-color:currentColor}
+.hero{background:var(--navy);color:var(--on-navy);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-120px;bottom:-160px;width:460px;height:460px;background:var(--lime);opacity:.9;border-radius:0 100% 0 100%;transform:rotate(-10deg)}
+.hero .wrap{position:relative;z-index:1;padding-top:72px;padding-bottom:96px;max-width:1120px}
+.badge{display:inline-flex;align-items:center;gap:8px;border:2px solid var(--lime);color:var(--lime);border-radius:999px;padding:6px 16px;font-weight:600;font-size:.9rem}
+h1{font-size:clamp(2.2rem,6vw,4rem);line-height:1.08;letter-spacing:-.03em;margin:20px 0 16px;max-width:15ch}
+h1 em{font-style:normal;color:var(--lime)}
+.hero p{max-width:52ch;color:#c9d6db;font-size:1.1rem;margin:0 0 28px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.promo{position:absolute;z-index:2;right:max(20px,calc(50% - 540px));top:56px;width:120px;height:120px;border-radius:50%;background:var(--navy);border:3px solid var(--lime);display:grid;place-items:center;text-align:center;transform:rotate(-8deg);line-height:1}
+.promo small{display:block;color:var(--lime);font-weight:700;letter-spacing:.12em;font-size:.7rem}
+.promo strong{font-size:1.9rem}
+section{padding:72px 0}
+.eyebrow{color:var(--accent-text);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:.85rem}
+h2{font-size:clamp(1.8rem,4vw,2.6rem);letter-spacing:-.02em;line-height:1.15;margin:6px 0 12px}
+.lead{color:var(--muted);max-width:56ch;margin:0 0 36px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:8px;transition:transform .2s ease,border-color .2s ease}
+.card:hover{transform:translateY(-4px);border-color:var(--lime)}
+.card h3{margin:0;font-size:1.1rem}
+.card p{margin:0;color:var(--muted);font-size:.95rem;flex:1}
+.price{display:flex;align-items:baseline;gap:10px;margin-top:8px}
+.price .new{font-size:1.9rem;font-weight:700;background:var(--lime);color:var(--lime-ink);padding:0 10px;border-radius:8px}
+.price .old{color:var(--muted);text-decoration:line-through}
+.print{background:var(--navy);color:var(--on-navy)}
+.print .lead{color:#a7b8bf}.print .eyebrow{color:var(--lime)}
+.list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:0 48px}
+.list li{display:flex;align-items:center;gap:12px;padding:16px 0;border-bottom:1px solid #223a45;font-size:1.05rem}
+.list li::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--lime);flex:none}
+.list li span{margin-inline-start:auto;color:var(--lime);font-weight:700;font-size:1.15rem;white-space:nowrap}
+.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.why div{display:flex;gap:16px;align-items:flex-start}
+.ic{flex:none;width:52px;height:52px;border-radius:14px;background:var(--lime);display:grid;place-items:center}
+.ic svg{width:26px;height:26px;stroke:var(--lime-ink);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.why h3{margin:0 0 4px;font-size:1.1rem}.why p{margin:0;color:var(--muted);font-size:.95rem}
+.contact{background:var(--navy);color:var(--on-navy);text-align:center;border-radius:28px;padding:56px 24px;position:relative;overflow:hidden}
+.contact h2{margin-top:0}
+.contact p{color:#c9d6db;max-width:46ch;margin:0 auto 28px}
+.contact .cta{justify-content:center}
+.contact .btn.ghost{color:#fff}
+footer{background:var(--navy);color:#a7b8bf;padding:28px 0;font-size:.9rem;text-align:center}
+footer b{color:var(--lime)}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media (max-width:760px){
+  .nav ul{display:none}
+  .promo{width:92px;height:92px;top:20px;right:16px}.promo strong{font-size:1.4rem}
+  .hero .wrap{padding-top:96px;padding-bottom:72px}
+  section{padding:56px 0}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}
+}
+
+.tools{display:flex;align-items:center;gap:8px}
+.tbtn,.lang{height:44px;border-radius:999px;border:2px solid #4b6470;background:transparent;color:#fff;cursor:pointer;font:inherit}
+.tbtn{width:44px;display:grid;place-items:center;padding:0}
+.tbtn:hover,.lang:hover{border-color:var(--lime)}
+.tbtn svg,.globe svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.globe{position:relative;display:flex;align-items:center}
+.globe svg{position:absolute;inset-inline-start:12px;pointer-events:none;color:#fff}
+.lang{appearance:none;-webkit-appearance:none;padding:0 14px;padding-inline-start:38px;font-size:.9rem}
+.lang option{color:#0b1a22}
+:root[data-theme="dark"] .i-moon,:root:not([data-theme="dark"]) .i-sun{display:none}
+[dir="rtl"] .promo{transform:rotate(8deg)}
+@media (max-width:760px){.nav>.btn{display:none}.lang{padding-inline-end:8px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="futuro.tech Design Studio, accueil"><span class="dot"><i></i></span><span>futuro<b>.</b>tech</span></a>
+    <ul>
+      <li><a href="#sites">Sites internet</a></li>
+      <li><a href="#impression">Impression</a></li>
+      <li><a href="#pourquoi">Pourquoi nous</a></li>
+    </ul>
+    <div class="tools">
+      <label class="globe"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.500 3 14.500 0 18M12 3c-3 3.500-3 14.500 0 18"/></svg>
+        <select class="lang" id="lang" aria-label="Langue / Language">
+          <option value="fr">FR</option><option value="en">EN</option><option value="ar">AR</option><option value="de">DE</option><option value="zh">中文</option>
+        </select></label>
+      <button class="tbtn" id="theme" type="button" aria-label="Mode clair / sombre">
+        <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.800A9 9 0 1111.200 3a7 7 0 009.800 9.800z"/></svg>
+        <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.900 4.900l1.400 1.400M17.700 17.700l1.400 1.400M2 12h2M20 12h2M4.900 19.100l1.400-1.400M17.700 6.300l1.400-1.400"/></svg>
+      </button>
+    </div>
+    <a class="btn" href="#contact" style="min-height:44px;padding:0 20px">Devis gratuit</a>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="promo" aria-label="Promotion 35 pour cent"><div><small>PROMO</small><strong>35 %</strong></div></div>
+    <div class="wrap">
+      <span class="badge">DESIGN STUDIO</span>
+      <h1>Votre projet, <em>notre créativité&nbsp;!</em></h1>
+      <p>Sites internet sur mesure, logos et supports d'impression : une identité cohérente, du premier écran jusqu'à la dernière carte de visite.</p>
+      <div class="cta">
+        <a class="btn" href="#sites">Voir les tarifs</a>
+        <a class="btn ghost" href="#contact">Nous contacter</a>
+      </div>
+    </div>
+  </div>
+
+  <section id="sites">
+    <div class="wrap">
+      <div class="eyebrow">Nos prestations</div>
+      <h2>Site internet</h2>
+      <p class="lead">Moderne, rapide et adapté à votre activité. Tarifs promotionnels de -35 % sur toutes les formules.</p>
+      <div class="cards">
+        <article class="card reveal"><h3>Vitrine</h3><p>Présentez votre activité avec un site clair et professionnel.</p><div class="price"><span class="new">490 €</span><span class="old">750 €</span></div></article>
+        <article class="card reveal"><h3>Vitrine + réservation</h3><p>Vos clients réservent directement en ligne.</p><div class="price"><span class="new">560 €</span><span class="old">850 €</span></div></article>
+        <article class="card reveal"><h3>Boutique en ligne</h3><p>Vendez vos produits 24h/24, partout.</p><div class="price"><span class="new">620 €</span><span class="old">950 €</span></div></article>
+        <article class="card reveal"><h3>Boutique + réservation</h3><p>Vente en ligne et prise de rendez-vous réunies.</p><div class="price"><span class="new">720 €</span><span class="old">1100 €</span></div></article>
+        <article class="card reveal"><h3>Mise à jour – maintenance</h3><p>Votre site reste à jour, sécurisé et performant.</p><div class="price"><span class="new">65 €</span><span class="old">100 €</span></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="impression" class="print">
+    <div class="wrap">
+      <div class="eyebrow">Supports publicitaires</div>
+      <h2>&amp; Impression</h2>
+      <p class="lead">Tout pour porter votre marque : du logo aux supports événementiels.</p>
+      <ul class="list">
+        <li>Carte visite<span>50 €</span></li>
+        <li>Flyers<span>70 €</span></li>
+        <li>Stickers / Autocollants<span>100 €</span></li>
+        <li>Étiquettes produits<span>80 €</span></li>
+        <li>Roll-up<span>80 €</span></li>
+        <li>Affiche<span>80 €</span></li>
+        <li>Dépliants<span>100 €</span></li>
+        <li>Logo<span>150 €</span></li>
+        <li>Mockup<span>15 €</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="pourquoi">
+    <div class="wrap">
+      <div class="eyebrow">Nos engagements</div>
+      <h2>Pourquoi nous choisir</h2>
+      <p class="lead">Un studio à taille humaine, des délais tenus et un suivi à chaque étape.</p>
+      <div class="why">
+        <div class="reveal"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6 6 .9-4.5 4.4 1 6.2L12 16.600 6.500 19.500l1-6.200L3 8.900 9 8z"/></svg></span><div><h3>Qualité professionnelle</h3><p>Des créations soignées, pensées pour durer et pour convaincre.</p></div></div>
+        <div class="reveal"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><h3>Respect des délais</h3><p>Un calendrier clair, annoncé dès le départ et tenu.</p></div></div>
+        <div class="reveal"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13v-2a8 8 0 0116 0v2"/><rect x="3" y="13" width="4" height="6" rx="1"/><rect x="17" y="13" width="4" height="6" rx="1"/></svg></span><div><h3>Accompagnement personnalisé</h3><p>Un interlocuteur unique, à l'écoute de vos besoins.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="padding-top:0">
+    <div class="wrap">
+      <div class="contact">
+        <div class="eyebrow" style="color:var(--lime)">Parlons de votre projet</div>
+        <h2>Demandez votre devis gratuit</h2>
+        <p>Décrivez-nous votre besoin, nous revenons vers vous rapidement.</p>
+        <div class="cta">
+          <a class="btn" href="tel:+33769891287">Appeler le 07 69 89 12 87</a>
+          <a class="btn ghost" href="mailto:zineb.ftdesign@gmail.com?subject=Demande%20de%20devis">zineb.ftdesign@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">© 2026 <b>futuro.tech</b> Design Studio — Votre projet, notre créativité&nbsp;!</div></footer>
+
+<script>
+(function(){
+  var R=document.documentElement,LS=["fr","en","ar","de","zh"];
+  var rows=[["Sites internet", "Websites", "المواقع الإلكترونية", "Webseiten", "网站"], ["Impression", "Print", "الطباعة", "Druck", "印刷"], ["Pourquoi nous", "Why us", "لماذا نحن", "Warum wir", "为什么选择我们"], ["Devis gratuit", "Free quote", "عرض سعر مجاني", "Gratis-Angebot", "免费报价"], ["PROMO", "PROMO", "عرض", "AKTION", "促销"], ["Votre projet,", "Your project,", "مشروعك،", "Ihr Projekt,", "您的项目，"], ["notre créativité !", "our creativity!", "إبداعنا!", "unsere Kreativität!", "我们的创意！"], ["Sites internet sur mesure, logos et supports d'impression : une identité cohérente, du premier écran jusqu'à la dernière carte de visite.", "Custom websites, logos and print materials: a consistent identity from the first screen to the last business card.", "مواقع مخصصة وشعارات ومطبوعات: هوية متناسقة من الشاشة الأولى حتى آخر بطاقة عمل.", "Maßgeschneiderte Websites, Logos und Druckmaterialien: eine einheitliche Identität vom ersten Bildschirm bis zur letzten Visitenkarte.", "定制网站、标志和印刷品：从第一个页面到最后一张名片，保持统一的品牌形象。"], ["Voir les tarifs", "See pricing", "عرض الأسعار", "Preise ansehen", "查看价格"], ["Nous contacter", "Contact us", "اتصل بنا", "Kontakt", "联系我们"], ["Nos prestations", "Our services", "خدماتنا", "Unsere Leistungen", "我们的服务"], ["Site internet", "Website", "موقع إلكتروني", "Website", "网站"], ["Moderne, rapide et adapté à votre activité. Tarifs promotionnels de -35 % sur toutes les formules.", "Modern, fast and tailored to your business. Promotional prices of -35% on all packages.", "حديث وسريع ومناسب لنشاطك. أسعار ترويجية بخصم 35٪ على جميع الباقات.", "Modern, schnell und auf Ihr Geschäft zugeschnitten. 35 % Rabatt auf alle Pakete.", "现代、快速、贴合您的业务。所有套餐享 35% 优惠价。"], ["Vitrine", "Showcase site", "موقع تعريفي", "Präsentationsseite", "展示型网站"], ["Présentez votre activité avec un site clair et professionnel.", "Present your business with a clear, professional site.", "قدّم نشاطك بموقع واضح واحترافي.", "Präsentieren Sie Ihr Unternehmen mit einer klaren, professionellen Seite.", "用清晰专业的网站展示您的业务。"], ["Vitrine + réservation", "Showcase + booking", "موقع تعريفي + حجز", "Präsentation + Buchung", "展示型 + 预约"], ["Vos clients réservent directement en ligne.", "Your customers book directly online.", "عملاؤك يحجزون مباشرة عبر الإنترنت.", "Ihre Kunden buchen direkt online.", "客户可直接在线预约。"], ["Boutique en ligne", "Online shop", "متجر إلكتروني", "Online-Shop", "网上商店"], ["Vendez vos produits 24h/24, partout.", "Sell your products 24/7, anywhere.", "بع منتجاتك على مدار الساعة وفي أي مكان.", "Verkaufen Sie Ihre Produkte rund um die Uhr, überall.", "全天候、随时随地销售您的产品。"], ["Boutique + réservation", "Shop + booking", "متجر + حجز", "Shop + Buchung", "商店 + 预约"], ["Vente en ligne et prise de rendez-vous réunies.", "Online sales and appointment booking combined.", "البيع عبر الإنترنت وحجز المواعيد في مكان واحد.", "Online-Verkauf und Terminbuchung in einem.", "在线销售与预约合二为一。"], ["Mise à jour – maintenance", "Updates & maintenance", "التحديث والصيانة", "Updates & Wartung", "更新与维护"], ["Votre site reste à jour, sécurisé et performant.", "Your site stays up to date, secure and fast.", "يبقى موقعك محدّثًا وآمنًا وسريعًا.", "Ihre Website bleibt aktuell, sicher und schnell.", "让您的网站保持最新、安全、高效。"], ["Supports publicitaires", "Advertising materials", "المواد الإعلانية", "Werbemittel", "宣传物料"], ["& Impression", "& Print", "والطباعة", "& Druck", "与印刷"], ["Tout pour porter votre marque : du logo aux supports événementiels.", "Everything to carry your brand: from the logo to event materials.", "كل ما تحتاجه لإبراز علامتك: من الشعار إلى مواد الفعاليات.", "Alles für Ihre Marke: vom Logo bis zu Event-Materialien.", "展现品牌所需的一切：从标志到活动物料。"], ["Carte visite", "Business card", "بطاقة عمل", "Visitenkarte", "名片"], ["Flyers", "Flyers", "منشورات", "Flyer", "传单"], ["Stickers / Autocollants", "Stickers / Decals", "ملصقات", "Aufkleber", "贴纸"], ["Étiquettes produits", "Product labels", "ملصقات المنتجات", "Produktetiketten", "产品标签"], ["Roll-up", "Roll-up", "رول أب", "Roll-up", "易拉宝"], ["Affiche", "Poster", "ملصق إعلاني", "Plakat", "海报"], ["Dépliants", "Brochures", "كتيبات", "Faltblätter", "折页"], ["Logo", "Logo", "شعار", "Logo", "标志"], ["Mockup", "Mockup", "نموذج عرض", "Mockup", "效果图"], ["Nos engagements", "Our commitments", "التزاماتنا", "Unser Versprechen", "我们的承诺"], ["Pourquoi nous choisir", "Why choose us", "لماذا تختارنا", "Warum uns wählen", "为什么选择我们"], ["Un studio à taille humaine, des délais tenus et un suivi à chaque étape.", "A human-sized studio, deadlines kept and follow-up at every step.", "استوديو بحجم إنساني، ومواعيد محترمة، ومتابعة في كل مرحلة.", "Ein Studio mit persönlicher Note, eingehaltene Fristen und Betreuung bei jedem Schritt.", "小而专业的工作室，按时交付，全程跟进。"], ["Qualité professionnelle", "Professional quality", "جودة احترافية", "Professionelle Qualität", "专业品质"], ["Des créations soignées, pensées pour durer et pour convaincre.", "Polished work, designed to last and to convince.", "تصاميم متقنة صُمّمت لتدوم وتقنع.", "Sorgfältige Arbeiten, gemacht um zu überzeugen und zu halten.", "精心制作，经久耐用，更有说服力。"], ["Respect des délais", "On-time delivery", "احترام المواعيد", "Termintreue", "准时交付"], ["Un calendrier clair, annoncé dès le départ et tenu.", "A clear schedule, announced upfront and kept.", "جدول زمني واضح يُعلن من البداية ويُحترم.", "Ein klarer Zeitplan, von Anfang an genannt und eingehalten.", "时间表清晰，事先告知并严格执行。"], ["Accompagnement personnalisé", "Personalized support", "مرافقة مخصصة", "Persönliche Betreuung", "个性化陪伴"], ["Un interlocuteur unique, à l'écoute de vos besoins.", "A single point of contact who listens to your needs.", "محاور واحد يصغي إلى احتياجاتك.", "Ein fester Ansprechpartner, der auf Ihre Bedürfnisse eingeht.", "唯一对接人，倾听您的需求。"], ["Parlons de votre projet", "Let's talk about your project", "لنتحدث عن مشروعك", "Sprechen wir über Ihr Projekt", "聊聊您的项目"], ["Demandez votre devis gratuit", "Request your free quote", "اطلب عرض السعر المجاني", "Fordern Sie Ihr kostenloses Angebot an", "获取免费报价"], ["Décrivez-nous votre besoin, nous revenons vers vous rapidement.", "Describe your need and we'll get back to you quickly.", "صف لنا احتياجك وسنعاود الاتصال بك بسرعة.", "Beschreiben Sie Ihr Anliegen, wir melden uns schnell.", "告诉我们您的需求，我们会尽快回复。"], ["Appeler le 07 69 89 12 87", "Call 07 69 89 12 87", "اتصل: 07 69 89 12 87", "Anrufen: 07 69 89 12 87", "致电 07 69 89 12 87"], ["Design Studio — Votre projet, notre créativité !", "Design Studio — Your project, our creativity!", "Design Studio — مشروعك، إبداعنا!", "Design Studio — Ihr Projekt, unsere Kreativität!", "Design Studio — 您的项目，我们的创意！"]];
+  function norm(s){return s.replace(/[\s\u00a0]+/g," ").trim()}
+  var dict={};rows.forEach(function(r){dict[norm(r[0])]=r});
+  var nodes=[],w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode:function(n){var t=n.parentNode.nodeName;return(t==="SCRIPT"||t==="OPTION")?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT}}),n;
+  while((n=w.nextNode())){var k=norm(n.nodeValue);if(dict[k]){var m=n.nodeValue.match(/^(\s*)[\s\S]*?(\s*)$/);nodes.push({n:n,o:n.nodeValue,r:dict[k],a:m[1],z:m[2]})}}
+  var sel=document.getElementById("lang");
+  function setLang(l){
+    var i=LS.indexOf(l);if(i<0){l="fr";i=0}
+    nodes.forEach(function(x){x.n.nodeValue=i===0?x.o:x.a+x.r[i]+x.z});
+    R.lang=l;R.dir=l==="ar"?"rtl":"ltr";sel.value=l;
+    try{localStorage.setItem("ft-lang",l)}catch(e){}
+  }
+  var sl=null,st=null;try{sl=localStorage.getItem("ft-lang");st=localStorage.getItem("ft-theme")}catch(e){}
+  if(!sl){var b=(navigator.language||"fr").slice(0,2);sl=LS.indexOf(b)>-1?b:"fr"}
+  setLang(sl);sel.addEventListener("change",function(){setLang(sel.value)});
+  var mq=window.matchMedia("(prefers-color-scheme: dark)");
+  R.setAttribute("data-theme",st||(mq.matches?"dark":"light"));
+  document.getElementById("theme").addEventListener("click",function(){
+    var t=R.getAttribute("data-theme")==="dark"?"light":"dark";R.setAttribute("data-theme",t);
+    try{localStorage.setItem("ft-theme",t)}catch(e){}
+  });
+  var els=document.querySelectorAll(".reveal");
+  if(!("IntersectionObserver" in window)){els.forEach(function(e){e.classList.add("in")});return}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.15});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>
